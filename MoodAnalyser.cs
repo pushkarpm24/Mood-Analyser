@@ -1,11 +1,14 @@
-﻿using System;
-
-namespace MoodAnalyser
+﻿namespace MoodAnalyser
 {
     public class MoodAnalysis
 
     {
         static void Main(string[] args)
+        {
+
+        }
+
+        public MoodAnalysis()
         {
             
         }
@@ -17,9 +20,14 @@ namespace MoodAnalyser
                 return "SAD";               
             }
 
-            else
+            else if (message.ToLower().Contains("any"))
             {
                 return "HAPPY";
+            }
+
+            else
+            {
+                return "Not Sure About Mood";
             }
         }
 
