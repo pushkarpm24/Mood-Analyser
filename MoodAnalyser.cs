@@ -21,28 +21,28 @@ namespace MoodAnalyser
             {
                 if(message.Length == 0)
                 {
-                    throw new MoodAnalyserException("Message Can Not Be Empty");
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.Empty_Exception,"Message Can Not Be Empty");
                 }
 
-                else if (message.ToLower().Contains("sad"))
+                else if (message.Contains("Sad"))
                 {
                     return "SAD";
                 }
 
-                else if (message.ToLower().Contains("any"))
+                else if (message.Contains("Any"))
                 {
                     return "HAPPY";
                 }
 
                 else
                 {
-                    return "Not Sure About Mood";
+                    return "It Can Be Any Thing";
                 }
             }
 
-            catch (NullReferenceException e)
+            catch (MoodAnalyserException e)
             {
-                throw new MoodAnalyserException("Null Pointer");
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.Null_Exception, "Null Pointer");
             }
 
 
