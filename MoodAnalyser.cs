@@ -15,6 +15,12 @@ namespace MoodAnalyser
             
         }
 
+        public MoodAnalysis(string message)
+        {
+
+        }       
+
+
         public string AnalyseMood(string message)
         {
             try
@@ -42,7 +48,7 @@ namespace MoodAnalyser
 
             catch (MoodAnalyserException e)
             {
-                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.Null_Exception, "Null Pointer");
+                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.Null_Exception, e.message);
             }
 
 
